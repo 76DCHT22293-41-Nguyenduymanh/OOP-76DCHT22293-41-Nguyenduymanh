@@ -1,54 +1,27 @@
-#include <iostream>
-#include <string>
+#include <vector>
+#include<iostream>
+#include <string> 
 using namespace std;
+struct NhanVien{
+  string maNV;
+  string hoTen;
+  int tuoi; 
+}; 
+int main() {
+   
+    vector<NhanVien> ds(10); 
 
-// Khai bao lop 
-class NhanVien
-{
-private:
-    string manv;
-    string hoten;
-    string ngaysinh;
-    string diachi;
-
-public:
-    // Phuong thuc nhap 
-    void nhap()
-    {
-        cout << "Nhap ma nhan vien: ";
-        getline(cin, manv);
-
-        cout << "Nhap ho ten: ";
-        getline(cin, hoten);
-
-        cout << "Nhap ngay sinh: ";
-        getline(cin, ngaysinh);
-
-        cout << "Nhap dia chi: ";
-        getline(cin, diachi);
+    cout << "--- NHAP THONG TIN CHO 10 NHAN VIEN  ---\n";
+    for (int i = 0; i < 10; i++) {
+        cout << "Nhap thong tin nhan vien thu  " << i + 1 << ":\n";
+        cout << "MA NV: ";
+        cin >> ds[i].maNV;
+        cout << "Ho va ten: ";
+        cin.ignore();
+        getline(cin, ds[i].hoTen);
+        cout << "Tuoi: ";
+        cin >> ds[i].tuoi;
     }
-
-    // Phuong thuc xuat 
-    void xuat()
-    {
-        cout << "Ma nhan vien: " << manv << endl;
-        cout << "Ho ten: " << hoten << endl;
-        cout << "Ngay sinh: " << ngaysinh << endl;
-        cout << "Dia chi: " << diachi << endl;
-    }
-};
-
-// Khai bao ham main 
-int main()
-{
-    // Khai bao 1 doi tuong la Minh thuoc lop Nhanvien 
-    NhanVien Minh;
-
-    // Nhap thong tin cho Minh
-    Minh.nhap();
-
-    // Xuat thong tin cua Minh 
-    Minh.xuat();
-
+    
     return 0;
 }
